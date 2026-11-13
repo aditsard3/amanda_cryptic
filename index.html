@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+    <meta name="description"
+        content="Amanda Cryptic: 25 clues for your 25 years!">
+    <title>Amanda Cryptic</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <h1 class="title">Amanda Cryptic: <span class="title-lite" id="solved-tracker"></span></h1>
+      </header>
+      <section class="card" aria-labelledby="clue">
+        <h2 class="clue" id="clue">
+          <span id="clue-text"></span>
+          <span class="enumeration" id="enumeration"></span>
+        </h2>
+        <form id="answer-form" autocomplete="off">
+          <div class="cells" id="cells" role="group"></div>
+          <p class="feedback" id="feedback" role="status"></p>
+          <div class="actions">
+            <button class="button button-secondary button-snoopy"
+                id="scratch-toggle" type="button" aria-controls="scratchpad"
+                aria-expanded="false" aria-label="Show scratchpad"
+                title="Show scratchpad">
+              <svg class="snoopy-icon" viewBox="0 0 36 32" aria-hidden="true">
+                <path class="snoopy-body"
+                    d="M9.5 11.5C9.5 5.5 15 3 19.5 6.2C21.3 7.5 23 8.5 27.5 8.5C31.2 8.5 33 10.8 33 13.8C33 17.2 30.2 19.2 25.5 19.2H20.5V24.5H12.5V18.5C10.5 17 9.5 14.5 9.5 11.5Z">
+                </path>
+                <rect class="snoopy-collar" x="11.5" y="23.2" width="10"
+                    height="3" rx="1.5"></rect>
+                <ellipse class="snoopy-mark" cx="9.2" cy="17.2" rx="4"
+                    ry="6.8" transform="rotate(14 9.2 17.2)"></ellipse>
+                <ellipse class="snoopy-mark" cx="32.8" cy="11.5" rx="2.3"
+                    ry="1.8"></ellipse>
+                <ellipse class="snoopy-mark" cx="20.2" cy="10.8" rx="1.1"
+                    ry="1.6"></ellipse>
+                <path class="snoopy-line" d="M22.5 16.2Q26.2 17.2 28.8 15.6">
+                </path>
+              </svg>
+              <svg class="sunflower-icon" viewBox="0 0 28 28"
+                  aria-hidden="true">
+                <g class="sunflower-petals">
+                  <ellipse cx="14" cy="4.2" rx="2.3" ry="3.6"></ellipse>
+                  <ellipse cx="14" cy="23.8" rx="2.3" ry="3.6"></ellipse>
+                  <ellipse cx="4.2" cy="14" rx="3.6" ry="2.3"></ellipse>
+                  <ellipse cx="23.8" cy="14" rx="3.6" ry="2.3"></ellipse>
+                  <ellipse cx="14" cy="4.2" rx="2.3" ry="3.6"
+                      transform="rotate(30 14 14)"></ellipse>
+                  <ellipse cx="14" cy="23.8" rx="2.3" ry="3.6"
+                      transform="rotate(30 14 14)"></ellipse>
+                  <ellipse cx="4.2" cy="14" rx="3.6" ry="2.3"
+                      transform="rotate(30 14 14)"></ellipse>
+                  <ellipse cx="23.8" cy="14" rx="3.6" ry="2.3"
+                      transform="rotate(30 14 14)"></ellipse>
+                  <ellipse cx="14" cy="4.2" rx="2.3" ry="3.6"
+                      transform="rotate(60 14 14)"></ellipse>
+                  <ellipse cx="14" cy="23.8" rx="2.3" ry="3.6"
+                      transform="rotate(60 14 14)"></ellipse>
+                  <ellipse cx="4.2" cy="14" rx="3.6" ry="2.3"
+                      transform="rotate(60 14 14)"></ellipse>
+                  <ellipse cx="23.8" cy="14" rx="3.6" ry="2.3"
+                      transform="rotate(60 14 14)"></ellipse>
+                </g>
+                <circle class="sunflower-center" cx="14" cy="14" r="5.6">
+                </circle>
+                <circle class="sunflower-seed" cx="12.3" cy="12.5" r=".7">
+                </circle>
+                <circle class="sunflower-seed" cx="15.7" cy="12.5" r=".7">
+                </circle>
+                <circle class="sunflower-seed" cx="14" cy="14.3" r=".7">
+                </circle>
+                <circle class="sunflower-seed" cx="12.5" cy="15.8" r=".7">
+                </circle>
+                <circle class="sunflower-seed" cx="15.5" cy="15.8" r=".7">
+                </circle>
+              </svg>
+            </button>
+            <button class="button button-secondary" id="hint-toggle"
+                type="button" aria-controls="hint" aria-expanded="false">
+              Show Hint
+            </button>
+            <button class="button button-primary" id="submit" type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
+        <section class="scratchpad" id="scratchpad" aria-label="Scratchpad"
+            hidden>
+          <div class="scratchpad-header">
+            <span class="scratchpad-title">Scratchpad</span>
+            <div class="scratchpad-controls">
+              <button class="icon-button" id="scratch-shuffle" type="button"
+                  aria-label="Shuffle tiles" title="Shuffle tiles">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></path>
+                </svg>
+              </button>
+              <button class="icon-button" id="scratch-clear" type="button"
+                  aria-label="Clear scratchpad" title="Clear scratchpad">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="scratch-board" id="scratch-board">
+            <p class="scratch-empty" id="scratch-empty">
+              Tap words in the clue above to drop letter tiles here, then drag
+              to rearrange or tap a tile to highlight.
+            </p>
+          </div>
+        </section>
+        <p class="hint" id="hint" hidden></p>
+      </section>
+
+      <nav class="puzzle-nav" aria-label="Clues">
+        <button class="nav-arrow" id="prev" type="button"
+            aria-label="Previous clue">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+        </button>
+        <div class="dots" id="dots"></div>
+        <button class="nav-arrow" id="next" type="button" aria-label="Next clue">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18l6-6-6-6"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <footer class="footer">
+        <button class="link-button" id="reset" type="button">
+          Reset progress
+        </button>
+      </footer>
+    </main>
+
+    <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+    <!--
+      Classic (non-module) scripts so the page also works when index.html is
+      opened straight from disk. Order matters: app.js uses the other two.
+    -->
+    <script src="config.js"></script>
+    <script src="confetti.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
