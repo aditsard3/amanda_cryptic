@@ -25,7 +25,7 @@ const PUZZLES = [
   {id: 'sample-7', clue: 'Fish in a strange state briefly.', answer: 'SUSHI', hint: 'A favorite food.'},
   {id: 'sample-8', clue: "Sœur, c'est elle-même", answer: 'ESTELLE', hint: 'Akin to a kin.'},
   {id: 'sample-9', clue: "\"Don't worry, this shit's number 1,\" text sent about Tuesday night plans?", answer: 'DWTS', hint: 'Smoothie drinker paid no mind on 8th ave.'},
-  {id: 'sample-10', clue: "Crazy accending moves between zamboni laps.", answer: "ICE DANCING", hint: "Highlights watched after OXMAS."},
+  {id: 'sample-10', clue: "Kinda eye accending spins between zamboni laps.", answer: "ICE DANCING", hint: "Highlights watched after OXMAS."},
 ];
 
 /**
